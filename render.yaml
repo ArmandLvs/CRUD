@@ -11,11 +11,11 @@ services:
       - key: DB_PORT
         value: 5432
       - key: DB_USER
-        value: render_user  # Change to your PostgreSQL user
+        value: csinventory_user  # Change to your PostgreSQL user
       - key: DB_PASS
-        value: your_db_password  # Change to your PostgreSQL password
+        value: 28RGVcrNOxgrDGGsvzisqeU8nqBHgXNC  # Change to your PostgreSQL password
       - key: DB_NAME
-        value: render_db  # Change to your PostgreSQL database name
+        value: csinventory  # Change to your PostgreSQL database name
 
   - type: psql
     name: php-inventory-database
