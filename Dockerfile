@@ -7,8 +7,9 @@ COPY . /var/www/html/
 # Set working directory
 WORKDIR /var/www/html/
 
-# Install any necessary PHP extensions (like PDO for database support)
-RUN docker-php-ext-install pdo pdo_mysql
+# Install necessary PHP extensions (PDO for PostgreSQL)
+RUN apt-get update && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql
 
 # Expose port 80 for web traffic
 EXPOSE 80

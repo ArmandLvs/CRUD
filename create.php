@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$name, $quantity, $price]);
         header("Location: read.php");
+        exit;  // Stop the script after redirection
     } else {
         echo "Please fill in all fields with valid data!";
     }

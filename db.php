@@ -1,5 +1,5 @@
 <?php
-// Get database credentials from environment variables (or define them here)
+// Get database credentials from environment variables
 $host = getenv('DB_HOST');
 $dbname = getenv('DB_NAME');
 $user = getenv('DB_USER');
@@ -13,5 +13,6 @@ try {
 } catch (PDOException $e) {
     // If the connection fails, display an error message
     echo "Connection failed: " . $e->getMessage();
+    exit;  // Stop the script if connection fails
 }
 ?>
