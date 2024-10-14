@@ -1,29 +1,28 @@
 <?php
-// Enable error reporting for debugging
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Include the database connection file
-require 'db.php'; // Ensure this path is correct
 
-// Check if the form is submitted
+require 'db.php'; 
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve form inputs and sanitize
+
     $name = trim($_POST['name']);
     $quantity = (int) $_POST['quantity'];
     $price = (float) $_POST['price'];
 
-    // Basic input validation
+
     if (!empty($name) && $quantity > 0 && $price > 0) {
-        // Prepare SQL statement for inserting data
+
         $sql = "INSERT INTO inventory (name, quantity, price) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($sql);
 
-        // Execute the statement
+
         if ($stmt->execute([$name, $quantity, $price])) {
             header("Location: read.php");
-            exit; // Ensure script exits after redirecting
+            exit; 
         } else {
             echo "Error occurred while adding the item!";
         }

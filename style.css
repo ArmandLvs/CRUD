@@ -1,20 +1,19 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #eaeaea; /* Light gray background */
-    color: #555; /* Slightly darker gray for text */
+    background-color: #eaeaea;
+    color: #555;
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #666; /* Dark gray for headings */
+    color: #666;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-/* Navbar */
 nav {
-    background-color: #777; /* Medium gray for navbar */
+    background-color: #777;
     padding: 15px;
     text-align: center;
 }
@@ -28,10 +27,9 @@ nav a {
 }
 
 nav a:hover {
-    color: #ccc; /* Light gray hover effect */
+    color: #ccc;
 }
 
-/* Form Styling */
 form {
     background-color: #fff;
     padding: 20px;
@@ -48,13 +46,13 @@ form input[type="hidden"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc; /* Lighter border for inputs */
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
 form input[type="submit"] {
-    background-color: #666; /* Darker gray for submit button */
+    background-color: #666;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -62,10 +60,9 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #888; /* Light gray hover effect */
+    background-color: #888;
 }
 
-/* Table Styling */
 table {
     width: 80%;
     margin: 50px auto;
@@ -75,30 +72,29 @@ table {
 table th, table td {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ccc; /* Light gray borders */
+    border-bottom: 1px solid #ccc;
 }
 
 table th {
-    background-color: #f5f5f5; /* Very light gray for table headers */
+    background-color: #f5f5f5;
     font-weight: 600;
-    color: #555; /* Medium gray for text in headers */
+    color: #555;
 }
 
 table tr:hover {
-    background-color: #f0f0f0; /* Light gray row hover effect */
+    background-color: #f0f0f0;
 }
 
 table a {
-    color: #555; /* Medium gray for links */
+    color: #555;
     text-decoration: none;
     font-weight: 500;
 }
 
 table a:hover {
-    color: #888; /* Light gray hover effect for links */
+    color: #888;
 }
 
-/* Buttons in Table */
 table .edit-btn, table .delete-btn {
     padding: 8px 12px;
     border-radius: 4px;
@@ -108,26 +104,25 @@ table .edit-btn, table .delete-btn {
 }
 
 table .edit-btn {
-    background-color: #888; /* Medium gray for edit button */
+    background-color: #888;
     color: white;
 }
 
 table .delete-btn {
-    background-color: #b3b3b3; /* Lighter gray for delete button */
+    background-color: #b3b3b3;
     color: white;
 }
 
 table .edit-btn:hover {
-    background-color: #aaa; /* Light gray hover for edit button */
+    background-color: #aaa;
 }
 
 table .delete-btn:hover {
-    background-color: #ccc; /* Even lighter gray hover for delete button */
+    background-color: #ccc;
 }
 
-/* Footer */
 footer {
-    background-color: #555; /* Dark gray for footer */
+    background-color: #555;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -137,16 +132,15 @@ footer {
 }
 
 footer a {
-    color: #ccc; /* Light gray for footer links */
+    color: #ccc;
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
-    color: #fff; /* White underline hover effect */
+    color: #fff;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     table, form {
         width: 100%;

@@ -1,7 +1,6 @@
 <?php
-include 'db.php';  // Ensure db.php is included at the top, which initializes $pdo
+include 'db.php';  
 
-// Fetch all records using PDO
 $sql = "SELECT * FROM inventory";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
@@ -42,18 +41,15 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($item['price']) ?></td>
                         <td>
                 <?php 
-                // Check if AcquisitionDate exists and format it with microseconds if available
                 if (isset($item['acquisitiondate'])) {
                     try {
-                        // Create a DateTime object from the AcquisitionDate
                         $date = new DateTime($item['acquisitiondate']);
-                        // Format the date to display in 'Y-m-d H:i:s' format (without microseconds)
                         echo htmlspecialchars($date->format('Y-m-d H:i:s'));
                     } catch (Exception $e) {
-                        echo 'Invalid Date'; // Handle any date parsing exceptions
+                        echo 'Invalid Date'; 
                     }
                 } else {
-                    echo 'N/A'; // Default value if the date is not set
+                    echo 'N/A'; 
                 }
                 ?>
             </td>
