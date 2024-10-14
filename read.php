@@ -1,5 +1,5 @@
 <?php
-include 'db.php';  // Make sure to include db.php at the top
+include 'db.php';  // Ensure db.php is included at the top, which initializes $pdo
 
 // Fetch all records using PDO
 $sql = "SELECT * FROM inventory";
@@ -42,19 +42,24 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($item['price']) ?></td>
                         <td>
                 <?php 
-                // Check if AcquisitionDate exists and format it
+                // Check if AcquisitionDate exists and format it with microseconds if available
                 if (isset($item['AcquisitionDate'])) {
-                    // Convert the date to a more readable format if needed
-                    $date = new DateTime($item['AcquisitionDate']);
-                    echo htmlspecialchars($date->format('Y-m-d H:i:s'));
+                    try {
+                        // Create a DateTime object from the AcquisitionDate
+                        $date = new DateTime($item['AcquisitionDate']);
+                        // Format the date to display in 'Y-m-d H:i:s' format (without microseconds)
+                        echo htmlspecialchars($date->format('Y-m-d H:i:s'));
+                    } catch (Exception $e) {
+                        echo 'Invalid Date'; // Handle any date parsing exceptions
+                    }
                 } else {
                     echo 'N/A'; // Default value if the date is not set
                 }
                 ?>
             </td>
                         <td class="actions">
-                            <a href="update.php?id=<?= $item['id'] ?>">Edit</a>
-                            <a href="delete.php?id=<?= $item['id'] ?>" class="delete" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                            <a href="update.php?id=<?= htmlspecialchars($item['id']) ?>">Edit</a>
+                            <a href="delete.php?id=<?= htmlspecialchars($item['id']) ?>" class="delete" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
