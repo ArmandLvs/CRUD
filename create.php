@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = trim($_POST['name']);
     $quantity = (int) $_POST['quantity'];
     $price = (float) $_POST['price'];
+    $acquisitiondate = $_POST['acquisitiondate'];
 
 
     if (!empty($name) && $quantity > 0 && $price > 0) {
@@ -50,6 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="price">Price:</label>
         <input type="number" step="0.01" name="price" id="price" required><br>
+        <label for="acquisitiondate">Acquisition Date:</label>
+        <input type="date" name="acquisitiondate" id="acquisitiondate" required><br>
 
         <button type="submit">Add Item</button>
     </form>

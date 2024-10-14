@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $quantity = (int) $_POST['quantity'];
     $price = (float) $_POST['price'];
+    $acquisitiondate = $_POST['acquisitiondate'];
 
     if (!empty($name) && $quantity > 0 && $price > 0) {
         $sql = "UPDATE inventory SET name = ?, quantity = ?, price = ? WHERE id = ?";
@@ -40,6 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="price">Price:</label>
         <input type="number" step="0.01" name="price" id="price" value="<?= htmlspecialchars($item['price']) ?>" required><br>
+        <label for="acquisitiondate">Acquisition Date:</label>
+        <input type="date" name="acquisitiondate" id="acquisitiondate" value="<?= htmlspecialchars($item['acquisitiondate']) ?>" required><br>
+
+
 
         <button type="submit">Update Item</button>
     </form>
