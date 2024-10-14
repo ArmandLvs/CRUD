@@ -43,10 +43,10 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td>
                 <?php 
                 // Check if AcquisitionDate exists and format it with microseconds if available
-                if (isset($item['AcquisitionDate'])) {
+                if (isset($item['acquisitiondate'])) {
                     try {
                         // Create a DateTime object from the AcquisitionDate
-                        $date = new DateTime($item['AcquisitionDate']);
+                        $date = new DateTime($item['acquisitiondate']);
                         // Format the date to display in 'Y-m-d H:i:s' format (without microseconds)
                         echo htmlspecialchars($date->format('Y-m-d H:i:s'));
                     } catch (Exception $e) {
