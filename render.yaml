@@ -7,15 +7,17 @@ services:
     startCommand: ''
     envVars:
       - key: DB_HOST
-        value: your-postgresql-service.internal
+        value: ep-polished-glade-a4ncvcqh-pooler.us-east-1.aws.neon.tech  # Host from the connection string
       - key: DB_PORT
-        value: 5432
+        value: 5432  # Standard PostgreSQL port
       - key: DB_USER
-        value: csinventory_user  # Change to your PostgreSQL user
+        value: default  # Username from the connection string
       - key: DB_PASS
-        value: 28RGVcrNOxgrDGGsvzisqeU8nqBHgXNC  # Change to your PostgreSQL password
+        value: AUlTy6q0CmpD  # Password from the connection string
       - key: DB_NAME
-        value: csinventory  # Change to your PostgreSQL database name
+        value: verceldb  # Database name from the connection string
+      - key: DB_URL
+        value: "postgres://default:AUlTy6q0CmpD@ep-polished-glade-a4ncvcqh-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"  # Full connection string
 
   - type: psql
     name: php-inventory-database
